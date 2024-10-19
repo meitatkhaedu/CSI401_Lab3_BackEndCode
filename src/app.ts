@@ -2,8 +2,6 @@ import express, { Request, Response } from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
-import { member } from "./member/route";
-import { auth } from "./auth/route";
 import { income } from "./income/route";
 
 dotenv.config();
@@ -14,10 +12,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(helmet());
-
-app.use("/auth", auth);
-
-app.use("/member", member);
 
 app.use("/income", income);
 
